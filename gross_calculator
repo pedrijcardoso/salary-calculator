@@ -1,0 +1,44 @@
+package gross_calculator;
+
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class GrossPayCalculator {
+
+    public static void main(String[] args) {
+        //importing scanner
+        Scanner read = new Scanner(System.in);
+
+        //1. Number of hours worked
+        int hours = 0;
+        System.out.println("How many hours did you work?");
+        hours = read.nextInt();
+
+        //2. Hourly pay rate
+        double payRate = 0;
+        System.out.println("What is your pay rate?");
+        payRate = read.nextDouble();
+
+        //closing scanner
+        read.close();
+
+        //3. Multiply hours and pay rate
+        double grossPay = hours * payRate;
+
+        //RESULTS
+
+        //4. How much you make in a week
+        System.out.println("-----------------------------------------");
+        System.out.println("You make:");
+        System.out.println("~ $" + new DecimalFormat(".##").format(grossPay) + " in a week");
+
+        //5. How much you make in a month:
+        double salary = grossPay * 4.34;
+        System.out.println("~ $" + new DecimalFormat(".##").format(salary) + " in a month");
+
+        //5. How much you make in a year:
+        double salaryYear = salary * 12;
+        System.out.println("~ $" + new DecimalFormat(".##").format(salaryYear) + " in a year");
+        System.out.println("-----------------------------------------");
+    }
+}
